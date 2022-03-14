@@ -3,38 +3,6 @@ const submit = document.querySelector('.submit-btn');
 const bTitle = document.getElementById('bookTitle');
 const bAuthor = document.getElementById('bAuthor');
 
-const data = {}
-
-upForm.addEventListener('change', (e) => {
-    data[e.target.name] = e.target.value;    
-    const string = JSON.stringify(data);
-    localStorage.setItem('info', string);
-})
-
-let newData = [];
-let reload = [];
-
-submit.addEventListener('click', (e) => {
-    if(bTitle.value == "" || bAuthor.value == ""){
-        return null;
-    } else {
-        if(localStorage.length !== 0) {
-            e.preventDefault();
-            const infoBook = JSON.parse(localStorage.getItem('info'));
-            newData.push(infoBook);
-            const newLocal = JSON.stringify(newData);
-            localStorage.setItem('recent', newLocal);
-            const reloadBook = JSON.parse(localStorage.getItem('recent'));
-        }
-        reload.push(reloadBook);
-        newData.forEach(value => {
-            if(newData[newData.length-1] == value){
-                author(value);  
-            }
-        }); 
-    }
-})
-
 function author (array){
     const newFile = document.querySelector('.bookDetails');
     const divOne = document.createElement('div');
@@ -51,62 +19,86 @@ function author (array){
     newFile.appendChild(separate);
 }
 
-window.addEventListener('load', () => {
-    reload.forEach(value => {
-        if(reload[reload.length-1] == value){
-            author(value);  
-        }
-    })
+const data = {}
+
+upForm.addEventListener('change', (e) => {
+    data[e.target.name] = e.target.value;    
+    const string = JSON.stringify(data);
+    localStorage.setItem('info', string);
 })
 
+let newData = [];
+
+submit.addEventListener('click', (e) => {
+    if(bTitle.value == "" || bAuthor.value == ""){
+        return null;
+    } else {
+        e.preventDefault();
+        const infoBook = JSON.parse(localStorage.getItem('info'));
+        newData.push(infoBook);
+        const reload = JSON.stringify(newData);
+        localStorage.setItem('refresh', reload);
+        newData.forEach(value => {
+            if(newData[newData.length-1] == value){
+                author(value);  
+            }
+        })
+    }
+})
+
+window.addEventListener('load', () => {
+    if(localStorage.refresh != undefined) {
+        let charge = JSON.parse(localStorage.getItem('refresh'));
+        charge.forEach(value => {
+            author(value);
+        })
+    }
+})
+
+const removeArea = document.getElementsByClassName('gone');
 
 
 
 
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-//});
-
-// const string = JSON.stringify(data);
-// localStorage.setItem('info', string);
-// const infoBook = JSON.parse(localStorage.getItem('info'));
-
-// if (localStorage.length !== 0){
-    // const infoBook = JSON.parse(localStorage.getItem('info'));
-    // function newBook () {
-        // const divOne = document.createElement('div');
-        // divOne.textContent = infoBook.book;
-        // newFile.appendChild(divOne);
-    // }
-    
-// }
 
 
-// newBook();
-    
-    
-    
-    
-    
-// }
 
-// upForm.insertAdjacentHTML("beforebegin" `
-// <div class='bTitle'></div>
-// <div class='bAuthor'></div>
-// <button class='button'>Remove</button>
-// `)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 
+
+
+
+
+
+
 
