@@ -1,18 +1,12 @@
-# Mental Health Awareness Outreach Event
+# Awesome Books
 
-This is a website that contains information and registration details to a mental health awareness event that is being hosted.
+This is a website that allows the user to add and remove books
 
 ## Built With
 
 - HTML
 - CSS
 - Javascript
-
-## Live Demo
-
-[Live Demo Link](https://tafaramafemba.github.io/mental-health-outreach/)
-
-[Loom Video Link](https://www.loom.com/share/6bd5dbaaedf74a1a8c680d64de21f71b)
 
 ## Getting Started
 
@@ -21,13 +15,19 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 A Github account to clone the repository.
 ### Setup
-1. The user can get access to this repo by clicking on the repository's link (https://github.com/tafaramafemba/mental-health-outreach/). 
+1. The user can get access to this repo by clicking on the repository's link (https://github.com/tafaramafemba/Awesome-Books). 
 2. Next, the user will need to clone this repository into their personal Github account. Once this is complete, they will have the file.
 ### Deployment
 To deploy the site, the user will need to use Github Pages for this. The main branch can be used for this.
 
-
 ## Authors
+
+👤 **Oscar Bermudez**
+
+- GitHub: [@githubhandle](https://github.com/zkr024)
+- Twitter: [@twitterhandle](https://twitter.com/zkr024)
+- LinkedIn: [LinkedIn](www.linkedin.com/in/oscar-bermudez-07908222a)
+
 
 👤 **Tafara Mafemba**
 
@@ -35,10 +35,19 @@ To deploy the site, the user will need to use Github Pages for this. The main br
 - Twitter: (https://twitter.com/the_real_you___)
 - LinkedIn: (https://www.linkedin.com/in/tafara-mafemba-4b82a0156/)
 
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
 
 
 ## Acknowledgments
 
- Original design idea by Cindy Shin in Behance.
- - Website: (https://www.behance.net/adagio07)
- - LinkedIn: (https://www.linkedin.com/in/adagio07/)
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
