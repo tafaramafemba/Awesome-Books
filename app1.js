@@ -1,6 +1,6 @@
 const booksSection = document.querySelector('.books');
 const newBooks = [];
-let books = [
+let books = [  
   {
     title: 'Chronicles of Narnia',
     author: 'C.S Lewis',
