@@ -12,6 +12,7 @@ if (window.localStorage.getItem('bookArray') !== null) {
   for (let m = 0; m < array.length; m += 1) {
     newBooks[m] = JSON.parse(window.localStorage.getItem(m.toString()));
   }
+
   books = newBooks;
 }
 

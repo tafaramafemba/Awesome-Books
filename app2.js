@@ -26,13 +26,15 @@ class Awesome {
     }
     window.location.reload();
   }
-  
+
   displayObject(number) {
-    return `  
+    return ` 
+    <div class="container"> 
       <div class="title">${this.books[number].title}</div>
+      <div class="by">by</div>
       <div class="author">${this.books[number].author}</div>
       <button type="button" class="remove">Remove</button>
-      <hr>
+    </div>
     `;
   }
 }
