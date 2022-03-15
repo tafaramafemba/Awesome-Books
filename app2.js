@@ -5,24 +5,28 @@ class Awesome {
     this.books = [];
     this.newBooks = [];
   }
-  add(data){
-    let temp = [];
+
+  add(data) {
+    const temp = [];
     temp.push(data);
     this.books = temp;
   }
-  addBook(data){
-    let temp = [];
+
+  addBook(data) {
+    const temp = [];
     temp.push(data);
     this.newBooks = temp;
   }
-  delete(number){
-    this.books.splice(number,1);
+
+  delete(number) {
+    this.books.splice(number, 1);
     window.localStorage.setItem('bookArray', JSON.stringify(this.books));
     for (let k = 0; k < this.books.length; k += 1) {
       window.localStorage.setItem(k.toString(), JSON.stringify(this.books[k]));
     }
-    window.location.reload();    
+    window.location.reload();
   }
+  
   displayObject(number) {
     return `  
       <div class="title">${this.books[number].title}</div>
@@ -35,7 +39,7 @@ class Awesome {
 
 const awesome = new Awesome();
 
-awesome.add({title: 'Chronicles of Narnia', author: 'C.S Lewis'});
+awesome.add({ title: 'Chronicles of Narnia', author: 'C.S Lewis' });
 
 if (window.localStorage.getItem('bookArray') !== null) {
   const array = JSON.parse(window.localStorage.getItem('bookArray'));
