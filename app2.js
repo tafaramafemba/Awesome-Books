@@ -88,3 +88,10 @@ window.localStorage.setItem('bookArray', JSON.stringify(awesome.books));
 for (let k = 0; k < awesome.books.length; k += 1) {
   window.localStorage.setItem(k.toString(), JSON.stringify(awesome.books[k]));
 }
+
+
+  const date = document.querySelector('.date')
+  let today = new Date();
+  date.textContent = today;
+
+
