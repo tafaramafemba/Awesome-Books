@@ -89,8 +89,7 @@ for (let k = 0; k < awesome.books.length; k += 1) {
   window.localStorage.setItem(k.toString(), JSON.stringify(awesome.books[k]));
 }
 
-
-const currentDate = document.querySelector('.date')
+const currentDate = document.querySelector('.date');
 
 currentDate.textContent = new Date();
 
@@ -106,7 +105,6 @@ window.addEventListener('load', () => {
   mainPage.classList.add('hidden');
   contactInfo.classList.add('hidden');
 });
-
 
 list.addEventListener('click', () => {
   listOfBooks.classList.remove('hidden');
