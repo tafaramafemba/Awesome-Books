@@ -90,8 +90,38 @@ for (let k = 0; k < awesome.books.length; k += 1) {
 }
 
 
-  const date = document.querySelector('.date')
-  let today = new Date();
-  date.textContent = today;
+const date = document.querySelector('.date');
+let today = new Date();
+date.textContent = today;
+
+const list = document.querySelector('.list');
+const addNew = document.querySelector('.addNew');
+const contact = document.querySelector('.contact');
+const listOfBooks = document.querySelector('.listOfBooks');
+const mainPage = document.querySelector('.mainPage');
+const contactInfo = document.querySelector('.contactInfo');
+
+window.addEventListener('load', () => {
+  listOfBooks.classList.remove('hidden');
+  mainPage.classList.add('hidden');
+  contactInfo.classList.add('hidden');
+});
 
 
+list.addEventListener('click', () => {
+  listOfBooks.classList.remove('hidden');
+  mainPage.classList.add('hidden');
+  contactInfo.classList.add('hidden');
+});
+
+addNew.addEventListener('click', () => {
+  mainPage.classList.remove('hidden');
+  contactInfo.classList.add('hidden');
+  listOfBooks.classList.add('hidden');
+});
+
+contact.addEventListener('click', () => {
+  contactInfo.classList.remove('hidden');
+  listOfBooks.classList.add('hidden');
+  mainPage.classList.add('hidden');
+});
