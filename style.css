@@ -1,13 +1,50 @@
-
 * {
-  font-family: 'Comic Neue', cursive;
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 8px;
+  border: 2px solid #000;
+  padding: 5px;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.links li {
+  width: 70px;
+  text-align: center;
+}
+
+.addNew {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.date {
+  text-align: right;
+  width: 100%;
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  position: relative;
+  height: 99vh;
+  margin-top: 0;
 }
 
 .books {
@@ -60,4 +97,26 @@ body {
   text-align: center;
   align-self: flex-end;
   border: solid 2px #000;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactInfo p {
+  width: 550px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  border: 2px solid #000;
+  width: 100%;
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
 }
