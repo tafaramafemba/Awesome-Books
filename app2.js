@@ -90,9 +90,9 @@ for (let k = 0; k < awesome.books.length; k += 1) {
 }
 
 
-const date = document.querySelector('.date');
-let today = new Date();
-date.textContent = today;
+const currentDate = document.querySelector('.date')
+
+currentDate.textContent = new Date();
 
 const list = document.querySelector('.list');
 const addNew = document.querySelector('.addNew');

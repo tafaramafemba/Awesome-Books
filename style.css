@@ -32,6 +32,11 @@ nav {
   border-right: 1px solid #000;
 }
 
+.date {
+  text-align: right;
+  width: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -114,8 +119,4 @@ footer {
 
 .hidden {
   display: none;
-}
-
-.date {
-  text-align: right;
 }
