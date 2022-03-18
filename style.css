@@ -1,30 +1,45 @@
 * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
   font-family: "Comic Neue", cursive;
   font-weight: 700;
+}
+
+/* Header section */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+}
+
+body section,
+body footer,
+body header {
+  width: 100%;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  margin: 5px 8px;
+  align-items: center;
+  margin: 5px 10px;
   border: 2px solid #000;
-  padding: 5px;
-}
-
-.logo {
-  margin-left: 10px;
+  padding: 0 10px;
 }
 
 .links {
   display: flex;
   list-style: none;
-  margin: 0;
 }
 
-.links li {
-  width: 70px;
-  text-align: center;
+.links li,
+.logo {
+  padding: 6px;
+  margin: 3px 0;
 }
 
 .addNew {
@@ -32,91 +47,138 @@ nav {
   border-right: 1px solid #000;
 }
 
-.date {
-  text-align: right;
-  width: 100%;
+.links li:hover {
+  color: #218bff;
+  transform: scale(1.05);
+  transition: 200ms;
 }
 
-body {
+.date {
+  text-align: right;
+  margin-right: 10px;
+}
+
+/* Book-list section */
+
+#bookList {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  height: 99vh;
-  margin-top: 0;
+  margin: auto;
 }
 
-.books {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #000;
+#bookList h1 {
+  margin-bottom: 30px;
 }
 
 .container {
-  padding: 5px;
-  border: 1px solid #000;
+  border: 2px solid #000;
+  width: 66%;
+}
+
+#books {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  width: 500px;
+  width: 100%;
   position: relative;
+  padding: 8px;
 }
 
-.container div {
-  width: 160px;
-  text-align: start;
+.bTitle {
+  width: 150px;
 }
 
-.container .by {
-  width: 30px;
+.by {
+  width: 20px;
 }
 
-.remove {
-  margin-right: 10px;
-  background-color: #fff;
-  font-weight: 700;
+.delete {
   position: absolute;
   right: 0;
+  margin-right: 5px;
+  padding: 3px 5px;
+  background: #fff;
+  box-shadow: 2px 2px;
 }
 
-#form {
+/* Form section - Add book */
+
+#form,
+.input {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  align-items: center;
+  margin: auto;
 }
 
-#form input,
-#form button {
-  margin-top: 5px;
-  border: 1px solid #000;
+#form h2 {
+  margin-bottom: 30px;
 }
 
-#add {
-  width: 35px;
-  text-align: center;
+.input {
+  width: 40%;
+}
+
+.input input {
+  margin: 5px;
+  width: 100%;
+  padding: 3px 5px;
+  background: #fff;
+  box-shadow: 2px 2px;
+}
+
+#submit {
   align-self: flex-end;
-  border: solid 2px #000;
+  width: 50px;
 }
 
-.contactInfo {
+.delete:hover,
+#submit:hover {
+  color: #218bff;
+  transform: scale(1.05);
+  transition: 200ms;
+}
+
+.newColor {
+  background: #ddd;
+}
+
+/* Contact section */
+
+.contact {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.contactInfo p {
+.contact h2 {
+  margin-bottom: 30px;
+}
+
+.contact p {
   width: 550px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  border: 2px solid #000;
-  width: 100%;
-  padding: 5px;
+.cInfo {
+  margin: 10px;
 }
 
+/* Footer section */
+
+footer {
+  width: 100%;
+}
+.last {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 10px;
+  border: 2px solid #000;
+  padding: 5px 15px;
+}
+
+/* Class to hide sections */
+
 .hidden {
-  display: none;
+  display: none !important;
 }
