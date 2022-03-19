@@ -17,7 +17,6 @@ body {
 }
 
 body section,
-body footer,
 body header {
   width: 100%;
 }
@@ -111,6 +110,7 @@ nav {
   margin: auto;
 }
 
+.contact h2,
 #form h2 {
   margin-bottom: 30px;
 }
@@ -151,10 +151,6 @@ nav {
   align-items: center;
 }
 
-.contact h2 {
-  margin-bottom: 30px;
-}
-
 .contact p {
   width: 550px;
 }
@@ -168,6 +164,11 @@ nav {
 footer {
   width: 100%;
 }
+
+body footer {
+  width: 100%;
+}
+
 .last {
   display: flex;
   justify-content: space-between;

@@ -11,55 +11,58 @@ class Awesome {
 
   addRecord(title, author) {
     this.data = {
-        title: title,
-        author: author
-    }
+      title: title,
+      author: author,
+    };
     this.record.push(this.data);
     return this.data;
   }
+
   local() {
     localStorage.setItem('books', JSON.stringify(this.record));
     this.returnInfo();
   }
+
   returnInfo() {
-    list.innerHTML = "";
+    list.innerHTML = '';
     this.record = JSON.parse(localStorage.getItem('books'));
-    if(this.record === null){
-        this.record = [];
+    if (this.record === null) {
+      this.record = [];
     } else {
-        let count = 0;
-        this.record.forEach(element => {
-            count++;
-            list.innerHTML += `
-            <div id="books" class = "${this.color(count)}">
-                <div class="bTitle">${element.title}</div>
-                <div class="by">by</div>
-                <div class="bAuthor">${element.author}</div>
-                <button class="delete">Remove</button>
-            </div>
-            `
-        });
+      let count = 0;
+      this.record.forEach((element) => {
+        count += 1;
+        list.innerHTML += `
+          <div id="books" class = "${this.color(count)}">
+            <div class="bTitle">${element.title}</div>
+            <div class="by">by</div>
+            <div class="bAuthor">${element.author}</div>
+            <button class="delete">Remove</button>
+          </div>
+          `;
+      });
     }
   }
+
   eliminate(title, author) {
     let indexArray;
     this.record.forEach((element, index) => {
-        if(element.title === title && element.author === author) {
-            indexArray = index;
-        }
+      if (element.title === title && element.author === author) {
+        indexArray = index;
+      }
     });
     this.record.splice(indexArray, 1);
     this.local();
   }
+
   color(counter) {
     let change;
-    if(counter % 2 !== 0) {
-        change = "newColor";
-        return change;
-    } else {
-        change = "oldColor";
-        return change;
+    if (counter % 2 !== 0) {
+      change = 'newColor';
+      return change;
     }
+    change = 'oldColor';
+    return change;
   }
 }
 
@@ -68,35 +71,35 @@ const awesome = new Awesome();
 // EVEN LISTENERS //
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  let title = document.getElementById('title').value;
-  let author = document.getElementById('author').value;
-  if (title === "" || author === ""){
-      alert('missing information');
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  if (title === '' || author === '') {
+    alert('missing information');
   } else {
-      awesome.addRecord(title, author);
-      awesome.local();
-      document.getElementById('title').value = ""; 
-      document.getElementById('author').value = "";
+    awesome.addRecord(title, author);
+    awesome.local();
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
   }
-})
+});
 
 list.addEventListener('click', (e) => {
   e.preventDefault();
-  if(e.target.innerHTML === 'Remove') {
-      let eliminateBook =e.path[1].childNodes[1].childNodes[0].data;
-      let eliminateAuthor =e.path[1].childNodes[3].childNodes[0].data;
-      awesome.eliminate(eliminateBook, eliminateAuthor);
+  if (e.target.innerHTML === 'Remove') {
+    const eliminateBook = e.path[1].childNodes[1].childNodes[0].data;
+    const eliminateAuthor = e.path[1].childNodes[3].childNodes[0].data;
+    awesome.eliminate(eliminateBook, eliminateAuthor);
   }
-})
+});
 
 // SECTIONS //
 
 const change = (selection) => {
   const bookList = document.getElementById('bookList');
   const contact = document.querySelector('.contact');
-  switch(selection){
+  switch (selection) {
     case 'List':
-      bookList.classList.remove('hidden');  
+      bookList.classList.remove('hidden');
       form.classList.add('hidden');
       contact.classList.add('hidden');
       break;
@@ -113,53 +116,52 @@ const change = (selection) => {
     default:
       bookList.classList.remove('hidden');
       form.classList.add('hidden');
-      contact.classList.add('hidden');  
-  }   
-}
+      contact.classList.add('hidden');
+  }
+};
 
 const links = document.querySelector('.links');
 links.addEventListener('click', (e) => {
-  if(e.target.innerHTML === "List" || e.target.innerHTML === "Add new" || e.target.innerHTML === "Contact") {
-    let selection = e.target.innerHTML;
+  if (e.target.innerHTML === 'List' || e.target.innerHTML === 'Add new' || e.target.innerHTML === 'Contact') {
+    const selection = e.target.innerHTML;
     change(selection);
   }
-})
+});
 
 // Date section //
 
-let currentDate = new Date ();
+let currentDate = new Date();
 
-let currentMonth = currentDate.getMonth();
+const currentMonth = currentDate.getMonth();
 let actualDate = currentDate.getDate();
-let year = currentDate.getFullYear();
-let time = currentDate.toLocaleTimeString();
+const year = currentDate.getFullYear();
+const time = currentDate.toLocaleTimeString();
 
-const monthArray = ['January','February','March','April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-let month = monthArray[currentMonth];
+const monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const month = monthArray[currentMonth];
 
-switch (actualDate){
+switch (actualDate) {
   case 1:
   case 21:
   case 31:
-    actualDate +='st';
+    actualDate += 'st';
     break;
   case 2:
   case 22:
-    actualDate +='nd';
+    actualDate += 'nd';
     break;
   case 3:
   case 23:
-    actualDate +='rd';
+    actualDate += 'rd';
     break;
   default:
-    actualDate +='th';
+    actualDate += 'th';
 }
 
-let date = (`${month} ${actualDate} ${year}, ${time}`)
+const date = (`${month} ${actualDate} ${year}, ${time}`);
 
-let topDate = document.querySelector('.date');
+const topDate = document.querySelector('.date');
 topDate.textContent = date;
-
 
 // event when the page loads //
 document.addEventListener('DOMContentLoaded', awesome.returnInfo(), change());
