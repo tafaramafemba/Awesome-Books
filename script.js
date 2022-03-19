@@ -29,12 +29,14 @@ class Awesome {
       let count = 0;
       this.record.forEach((element) => {
         count += 1;
-        function color (counter) {
+        function color(counter) {
           let change;
           if (counter % 2 !== 0) {
             change = 'newColor';
             return change;
           }
+          change = 'old';
+          return change;
         }
         list.innerHTML += `
           <div id="books" class = "${color(count)}">
