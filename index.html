@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Awesome Books</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
-
-<body>
-    
+    <header>
         <nav>
             <div class="logo">Awesome Books</div>
             <ul class="links">
-                <li class="list">List</li>
+                <li>List</li>
                 <li class="addNew">Add new</li>
-                <li class="contact">Contact</li>
+                <li>Contact</li>
             </ul>
         </nav>
-    <div class="date"></div>
+        <div class="date"></div>
+    </header>
 
-    <section class="listOfBooks">
-        <h1>All Awesome Books</h1>
-        <div class="books"></div>
+    <section id="bookList">
+        <h1>All awesome books</h1>
+        <div class="container">
+            <div id="list"></div>
+        </div>
     </section>
 
-    <section class="mainPage">
+    <section id="form">
         <h2>Add a new book</h2>
-        <form id="form">
-            <input type="text" id="new-title" placeholder="Title">
-            <input type="text" id="new-author" placeholder="Author">
-            <button type="submit" id="add">Add</button>
+        <form class="input">
+            <input type="text" id="title" placeholder="Book title">
+            <input type="text" id="author" placeholder="Author">
+            <input type="submit" id="submit" value="Add">
         </form>
     </section>
 
-    <section class="contactInfo">
+    <section class="contact">
         <h2>Contact information</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit voluptatem deserunt odit necessitatibus soluta ullam voluptas id maxime veritatis.</p>
         <ul class="cInfo">
             <li>Our e-mail mail@mail.com</li>
             <li>Our phone number: 004358634422</li>
-            <li>Our address: Streetname 22, 84503 City, Country.</li>
+            <li>Our address: Street-name 22, 84503 City, Country.</li>
         </ul>  
     </section>
+
     <footer>
-        <div>Copyright    ...</div>
+        <div class="last">
+            <div>copyright   ...</div>
+        </div>        
     </footer>
-    
-    <script src="app2.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
