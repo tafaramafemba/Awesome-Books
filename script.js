@@ -10,7 +10,7 @@ class Awesome {
   }
 
   addRecord(title, author) {
-    this.data = {title, author};
+    this.data = { title, author };
     this.record.push(this.data);
     return this.data;
   }
@@ -29,8 +29,15 @@ class Awesome {
       let count = 0;
       this.record.forEach((element) => {
         count += 1;
+        function color (counter) {
+          let change;
+          if (counter % 2 !== 0) {
+            change = 'newColor';
+            return change;
+          }
+        }
         list.innerHTML += `
-          <div id="books" class = "${this.color(count)}">
+          <div id="books" class = "${color(count)}">
             <div class="bTitle">${element.title}</div>
             <div class="by">by</div>
             <div class="bAuthor">${element.author}</div>
@@ -50,16 +57,6 @@ class Awesome {
     });
     this.record.splice(indexArray, 1);
     this.local();
-  }
-
-  color(counter) {
-    let change;
-    if (counter % 2 !== 0) {
-      change = 'newColor';
-      return change;
-    }
-    change = 'oldColor';
-    return change;
   }
 }
 
