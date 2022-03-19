@@ -10,10 +10,7 @@ class Awesome {
   }
 
   addRecord(title, author) {
-    this.data = {
-      title: title,
-      author: author,
-    };
+    this.data = {title, author};
     this.record.push(this.data);
     return this.data;
   }
@@ -130,7 +127,7 @@ links.addEventListener('click', (e) => {
 
 // Date section //
 
-let currentDate = new Date();
+const currentDate = new Date();
 
 const currentMonth = currentDate.getMonth();
 let actualDate = currentDate.getDate();
